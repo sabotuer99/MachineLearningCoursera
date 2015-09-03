@@ -25,8 +25,17 @@ sigma = zeros(1, size(X, 2));
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
+% mu = mean(X) calculates mean on each column, stores in vector
+% sigma = std(X) calculates std on each column, stores in vector
+%
+% http://www.mathworks.com/matlabcentral/newsreader/view_thread/267082
+% bsxfun(F, A, B) does elementwise operation F on A and B, expanding
+% as necessary.  Subtract mu from each row of X, then divide each 
+% element of that by sigma
 
-
+mu = mean(X);
+sigma = std(X);
+X_norm = bsxfun(@rdivide,bsxfun(@minus,X,mu),sigma);
 
 
 

@@ -30,7 +30,7 @@ a3 = sigmoid(z3);
 
 [tmp, p] = max(a3, [] ,2);
 
-
+% "Model Representation II" at around 4:27 has everything you need
 % =========================================================================
 
 

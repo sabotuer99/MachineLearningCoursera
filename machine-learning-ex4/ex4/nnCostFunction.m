@@ -98,6 +98,17 @@ J = J + reg;
 d3 = a3 - ym;
 d2 = (d3 * Theta2(:,2:end)) .* sigmoidGradient(z2);
 
+% Below comes from
+% https://gist.github.com/denzilc/1360709
+
+D2 = d3' * a2; 
+D1 = d2' * X;
+
+Theta1_grad = ((1/m) * D1) + ((lambda/m) * (Theta1));
+Theta2_grad = ((1/m) * D2) + ((lambda/m) * (Theta2));
+
+Theta1_grad(:,1) -= ((lambda/m) * (Theta1(:,1)));
+Theta2_grad(:,1) -= ((lambda/m) * (Theta2(:,1)));
 
 % =========================================================================
 

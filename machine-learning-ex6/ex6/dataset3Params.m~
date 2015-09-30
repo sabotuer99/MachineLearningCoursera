@@ -49,7 +49,7 @@ Cindex = (index - sigindex) / dims + 1;
 sigma = val_vec(sigindex)
 C = val_vec(Cindex)
 
-% WHOOP Another totally unassisted assignment success!
+
 % =========================================================================
 
 end
